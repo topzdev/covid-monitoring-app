@@ -1,0 +1,12 @@
+.home {
+  position: relative;
+
+  &__container {
+    padding: 20px 30px;
+  }
+
+  &__countries {
+    margin-top: 20px;
+    width: 350px;
+  }
+}
