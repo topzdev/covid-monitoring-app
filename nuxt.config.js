@@ -34,11 +34,16 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ["@/plugins/global-component"],
+  plugins: [
+    "@/plugins/axios-accessor",
+    "@/plugins/store-accessor",
+    "@/plugins/global-component"
+  ],
   /*
    ** Nuxt.js dev-modules
    */
-  buildModules: ["@nuxt/typescript-build"],
+  buildModules: ["@nuxt/typescript-build", "@nuxtjs/dotenv"],
+  transpileDependencies: ["vuex-module-decorators"],
   /*
    ** Nuxt.js modules
    */

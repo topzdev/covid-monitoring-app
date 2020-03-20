@@ -1,5 +1,5 @@
-$color-base: #2f495e;
-$color-base-text: #fff;
+$color-base: #fff;
+$color-base-text: #20354d;
 
 $color-primary: #c43538;
 $color-primary-text: #fff;
@@ -7,9 +7,14 @@ $color-primary-text: #fff;
 $color-secondary: #6d6969;
 $color-secondary-text: #fff;
 
+$color-dark: #000;
+
 $color-infected: #f39c12;
 $color-death: #e74c3c;
 $color-recovered: #2ecc71;
+
+$color-twitter: #ecfbfd;
+$color-twitter-text: #1d8eff;
 
 .color {
   &--death {
@@ -19,7 +24,7 @@ $color-recovered: #2ecc71;
     }
   }
 
-  &--infected {
+  &--cases {
     svg {
       color: $color-infected;
       fill: $color-infected;

@@ -1,5 +1,5 @@
 {
-  "name": "covid-free-app",
+  "name": "covid-monitoring-app",
   "version": "1.0.0",
   "description": "A monitoring app for pandemic COVID.",
   "author": "Christopher Lugod",
@@ -17,7 +17,8 @@
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/dotenv": "^1.4.0",
     "numeral": "^2.0.6",
-    "nuxt": "^2.0.0"
+    "nuxt": "^2.0.0",
+    "vue-trend-chart": "^0.15.1"
   },
   "devDependencies": {
     "@nuxt/typescript-build": "^0.6.0",

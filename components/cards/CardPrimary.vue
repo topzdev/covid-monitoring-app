@@ -2,33 +2,48 @@
   <div class="card card--primary">
     <div class="card--primary__body">
       <div class="card--primary__header">
-        <div class="card--primary__icon">
-          <img src alt />
-        </div>
-        <div class="card--primary__country">China</div>
+        <h3
+          class="card--primary__country"
+          :aria-label="stat.country_name"
+          v-text="stat.country_name"
+          :title="stat.country_name"
+        />
 
-        <button class="btn card--primary__toggle ml-auto">
+        <button
+          class="btn card--primary__toggle ml-auto"
+          @click="toggle = !toggle"
+          aria-label="more info"
+          :title="toggleText"
+        >
           <base-icon :svg="icons.toggle"></base-icon>
         </button>
       </div>
 
       <ul class="card--primary__tally">
-        <li class="card--primary__tally-item" v-for="item in tally" :key="item.title">
+        <li
+          class="card--primary__tally-item"
+          v-for="item in tally"
+          :key="item.title"
+          :aria-label="item.title"
+          :title="item.title"
+        >
           <div class="card--primary__tally-body">
             <div v-if="item.icon" class="card--primary__tally-icon" :class="item.color">
               <base-icon :svg="item.icon"></base-icon>
             </div>
-            <h3 class="card--primary__total" v-text="format(item.value)" />
+            <h3 class="card--primary__total" v-text="item.value" />
           </div>
           <div class="card--primary__tally-title" v-text="item.title" />
         </li>
       </ul>
     </div>
+    <card-primary-others :stat="stat" :class="{'others-show': toggle}" :aria-expanded="toggle"></card-primary-others>
   </div>
 </template>
 
 <script lang="ts">
 import { Vue, Component, Prop } from "vue-property-decorator";
+import CardPrimaryOthers from "@/components/cards/primary/CardPrimaryOthers.vue";
 import numeral from "numeral";
 import {
   mdiAccountSupervisorOutline,
@@ -36,10 +51,12 @@ import {
   mdiHospitalBoxOutline,
   mdiChevronDown
 } from "@mdi/js";
-@Component
+import ICountryStat from "../../interfaces/ICountryStat";
+@Component({
+  components: { CardPrimaryOthers }
+})
 export default class CardPrimary extends Vue {
-  @Prop(String) flag: String | undefined;
-  @Prop(Object) data: Object | undefined;
+  @Prop(Object) stat!: ICountryStat;
 
   toggle = false;
   icons = {
@@ -49,49 +66,31 @@ export default class CardPrimary extends Vue {
     toggle: mdiChevronDown
   };
 
-  result = {
-    country_name: "China",
-    cases: "80928",
-    deaths: "3245",
-    region: "",
-    total_recovered: "70,420",
-    new_deaths: "8",
-    new_cases: "34",
-    serious_critical: "2,274",
-    active_cases: "7,263",
-    total_cases_per_1m_population: "56"
-  };
-
   get tally() {
     return [
       {
         icon: this.icons.infected,
         title: "Total Cases",
-        value: "98,000",
-        color: "color--infected"
+        value: this.stat.cases,
+        color: "color--cases"
       },
       {
         icon: this.icons.death,
         title: "Total Death",
-        value: "3,000",
+        value: this.stat.deaths,
         color: "color--death"
       },
       {
         icon: this.icons.recovered,
         title: "Total Recovered",
-        value: "98,000",
-        color: "color--recovered"
-      },
-      {
-        title: "Total Recovered",
-        value: "98,000",
+        value: this.stat.total_recovered,
         color: "color--recovered"
       }
     ];
   }
 
-  format(value: number) {
-    return numeral(value).format("0,0");
+  get toggleText() {
+    return !this.toggle ? "More Information " : "Hide Information";
   }
 }
 </script>

@@ -1,11 +1,11 @@
 import { Store } from "vuex";
 import { getModule } from "vuex-module-decorators";
-import home from "~/store/home";
+import IHomeModule from "~/store/home";
 
-let homeStore: home;
+let homeStore: IHomeModule;
 
 function initialiseStores(store: Store<any>): void {
-  homeStore = getModule(home, store);
+  homeStore = getModule(IHomeModule, store);
 }
 
-export { initialiseStores, homeStore };
+export { initialiseStores, homeStore, IHomeModule };

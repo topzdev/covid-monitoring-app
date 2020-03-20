@@ -1,0 +1,8 @@
+.heading {
+  &--primary {
+    font-weight: 900;
+    font-family: $font-header;
+    font-size: 45px;
+    color: $color-base-text;
+  }
+}

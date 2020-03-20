@@ -17,8 +17,8 @@
 
   &:focus {
     &::after {
-      border: 2px solid rgba($color-base-text, 0.8);
-      background-color: rgba($color-base-text, 0.35);
+      border: 2px solid rgba($color-base-text, 0.5);
+      background-color: rgba($color-base-text, 0.2);
     }
   }
 }
