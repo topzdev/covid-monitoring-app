@@ -1,0 +1,40 @@
+$color-base: #fff;
+$color-base-text: #20354d;
+
+$color-primary: #c43538;
+$color-primary-text: #fff;
+
+$color-secondary: #6d6969;
+$color-secondary-text: #fff;
+
+$color-dark: #000;
+
+$color-infected: #f39c12;
+$color-death: #e74c3c;
+$color-recovered: #2ecc71;
+
+$color-twitter: #ecfbfd;
+$color-twitter-text: #1d8eff;
+
+.color {
+  &--death {
+    svg {
+      color: $color-death;
+      fill: $color-death;
+    }
+  }
+
+  &--cases {
+    svg {
+      color: $color-infected;
+      fill: $color-infected;
+    }
+  }
+
+  &--recovered {
+    svg {
+      color: $color-recovered;
+      fill: $color-recovered;
+    }
+  }
+}

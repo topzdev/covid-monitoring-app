@@ -1,0 +1,76 @@
+.country {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  &__body {
+    flex: 1 1 100%;
+    padding: 30px 20px 0 70px;
+  }
+
+  &__tweets {
+    width: 450px;
+    background: $color-twitter;
+    padding: 30px;
+  }
+
+  &__tweets-heading {
+    font-family: $font-header;
+    font-weight: 900;
+    font-size: 22px;
+    color: $color-base-text;
+
+    span {
+      font-size: 38px;
+      color: $color-twitter-text;
+    }
+  }
+
+  &__body {
+  }
+
+  &__headers {
+    display: flex;
+    align-items: center;
+  }
+
+  &__tally {
+    display: flex;
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  &__tally-item {
+    display: flex;
+    flex-direction: column;
+    width: 33.3333%;
+  }
+  &__tally-header {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  &__tally-icon {
+    margin-right: 8px;
+    svg {
+      height: 35px;
+      width: 35px;
+    }
+  }
+
+  &__tally-title {
+    font-size: 16px;
+    margin-bottom: 2px;
+  }
+
+  &__tally-total {
+    font-size: 30px;
+    font-family: $font-header;
+  }
+
+  &__tally-chart {
+    width: 90%;
+    height: 180px;
+    margin-top: 10px;
+    border-radius: 10px;
+  }
+}

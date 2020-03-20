@@ -1,0 +1,19 @@
+.search-bar {
+  position: relative;
+  background-color: $color-base;
+  width: 500px;
+  padding: 16px 24px;
+  border-radius: 10px;
+  box-shadow: $box-shadow;
+
+  &__btn {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+
+    svg {
+      fill: $color-base-text;
+    }
+  }
+}

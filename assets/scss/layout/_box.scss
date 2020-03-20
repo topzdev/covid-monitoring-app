@@ -1,0 +1,76 @@
+.global-stat {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: rgba($color-base-text, 0.6);
+  padding: 20px;
+  border-radius: 20px;
+
+  &__tally {
+    display: flex;
+    color: $color-base;
+    list-style: none;
+  }
+
+  &__tally-item {
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+
+  &__tally-total {
+    font-family: $font-header;
+    font-size: 26px;
+  }
+
+  &__tally-title {
+    color: rgba($color-base, 0.6);
+    font-size: 14px;
+  }
+
+  &__tally-icon {
+    svg {
+      height: 26px;
+      width: 26px;
+    }
+  }
+
+  &__others {
+    display: flex;
+    flex-wrap: wrap;
+    color: $color-base;
+    list-style: none;
+    margin-left: 20px;
+    padding-left: 10px;
+    border-left: 1px solid rgba($color-base, 0.1);
+  }
+
+  &__others-item {
+    width: 33.3333%;
+    margin-bottom: 8px;
+  }
+
+  &__others-total {
+    font-family: $font-header;
+    font-size: 16px;
+  }
+
+  &__others-title {
+    font-size: 12px;
+    color: rgba($color-base, 0.6);
+  }
+}
+
+.chart {
+  &--cases {
+    background-color: rgba($color-infected, 0.3);
+  }
+
+  &--death {
+    background-color: rgba($color-death, 0.3);
+  }
+
+  &--recovered {
+    background-color: rgba($color-recovered, 0.3);
+  }
+}

@@ -1,0 +1,18 @@
+.inp {
+  font: inherit;
+  border: none;
+  outline: none;
+
+  &--search {
+    font-size: 20px;
+    background-color: transparent;
+    color: $color-base-text;
+    font-weight: 500;
+    width: 100%;
+
+    &::placeholder {
+      font-style: italic;
+      color: rgba($color-base-text, 0.8);
+    }
+  }
+}
