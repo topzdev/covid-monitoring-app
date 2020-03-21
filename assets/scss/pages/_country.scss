@@ -2,15 +2,23 @@
   display: flex;
   height: 100vh;
   width: 100%;
+  overflow: hidden;
   &__body {
     flex: 1 1 100%;
-    padding: 30px 20px 0 70px;
+    height: 100vh;
+    max-height: 100vh;
+    overflow-y: auto;
   }
 
   &__tweets {
     width: 450px;
     background: $color-twitter;
     padding: 30px;
+    overflow-y: hidden;
+
+    & .timeline-Widget {
+      background-color: transparent !important;
+    }
   }
 
   &__tweets-heading {
@@ -18,6 +26,7 @@
     font-weight: 900;
     font-size: 22px;
     color: $color-base-text;
+    margin-bottom: 20px;
 
     span {
       font-size: 38px;
@@ -25,7 +34,13 @@
     }
   }
 
-  &__body {
+  &__main {
+    padding: 30px 20px 30px 70px;
+    background-color: darken($color-base, 2%);
+  }
+
+  &__news {
+    padding: 30px 20px 50px 70px;
   }
 
   &__headers {
@@ -72,5 +87,29 @@
     height: 180px;
     margin-top: 10px;
     border-radius: 10px;
+  }
+
+  &__other {
+    margin-top: 20px;
+  }
+
+  &__other-tally {
+    display: flex;
+    list-style: none;
+  }
+
+  &__other-item {
+    &:not(:last-child) {
+      margin-right: 40px;
+    }
+  }
+  &__other-total {
+    font-size: 25px;
+  }
+  &__other-title {
+    font-size: 13px;
+    margin-top: 5px;
+    color: rgba($color-base-text, 0.8);
+    max-width: 100%;
   }
 }

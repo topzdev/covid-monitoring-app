@@ -16,6 +16,8 @@
     "@nuxt/typescript-runtime": "^0.4.0",
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/dotenv": "^1.4.0",
+    "cli-truncate": "^2.1.0",
+    "dayjs": "^1.8.23",
     "numeral": "^2.0.6",
     "nuxt": "^2.0.0",
     "vue-trend-chart": "^0.15.1"

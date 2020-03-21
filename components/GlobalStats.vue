@@ -1,4 +1,4 @@
-<template>
+x<template>
   <div class="global-stat">
     <ul class="global-stat__tally">
       <li

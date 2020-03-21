@@ -5,4 +5,10 @@
     font-size: 45px;
     color: $color-base-text;
   }
+
+  &--secondary {
+    color: $color-base-text;
+    font-family: $font-header;
+    font-weight: 900;
+  }
 }
