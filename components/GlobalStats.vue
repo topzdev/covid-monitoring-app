@@ -58,7 +58,7 @@ export default class GloalStats extends Vue {
         icon: this.icons.infected,
         title: "Total Global Cases",
         value: this.stat.total_cases,
-        color: "color--infected"
+        color: "color--cases"
       },
       {
         icon: this.icons.recovered,

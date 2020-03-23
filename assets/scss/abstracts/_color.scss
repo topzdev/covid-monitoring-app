@@ -38,3 +38,58 @@ $color-twitter-text: #1d8eff;
     }
   }
 }
+
+.chart {
+  &--cases {
+    background-color: rgba($color-infected, 0.3);
+  }
+
+  &--death {
+    background-color: rgba($color-death, 0.3);
+  }
+
+  &--recovered {
+    background-color: rgba($color-recovered, 0.3);
+  }
+}
+
+.curve {
+  &--cases {
+    .stroke {
+      stroke: $color-infected;
+    }
+    .fill {
+      fill: rgba($color-infected, 0.3);
+    }
+    .point {
+      fill: $color-infected;
+      stroke: $color-infected;
+    }
+  }
+
+  &--death {
+    .stroke {
+      stroke: $color-death;
+    }
+    .fill {
+      fill: rgba($color-death, 0.3);
+    }
+    .point {
+      fill: $color-death;
+      stroke: $color-death;
+    }
+  }
+
+  &--recovered {
+    .stroke {
+      stroke: $color-recovered;
+    }
+    .fill {
+      fill: rgba($color-recovered, 0.3);
+    }
+    .point {
+      fill: $color-recovered;
+      stroke: $color-recovered;
+    }
+  }
+}

@@ -1,7 +1,16 @@
 <template>
   <div class="home">
-    <home-page-map></home-page-map>
     <div class="home__container">
+      <client-only>
+        <home-page-map
+          appId="HSRyu7aoCRHbeFVcxHE5"
+          appCode="an4PsuurwqRp47qzbthhar-tUFFho8Jmk5quReCz6s4"
+          lat="37.7397"
+          lng="-121.4252"
+          width="100%"
+          height="100%"
+        ></home-page-map>
+      </client-only>
       <div class="home__sidebar">
         <search-bar></search-bar>
         <p class="home__total-results"></p>
@@ -35,11 +44,16 @@ export default class Homepage extends Vue {
   }
 
   get globalStat() {
+    console.log(homeStore.getWorldStat);
     return homeStore.getWorldStat;
   }
 
   get affectedCountries() {
     return homeStore.getAffectedCountries;
+  }
+
+  created() {
+    console.log(process.env.HERE_DEV_API_KEY);
   }
 }
 </script>

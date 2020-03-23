@@ -14,6 +14,18 @@ export default {
         content: process.env.npm_package_description || ""
       }
     ],
+    script: [
+      {
+        type: "text/javascript",
+        src: "https://js.api.here.com/v3/3.1/mapsjs-core.js",
+        charset: "utf-8"
+      },
+      {
+        type: "text/javascript",
+        src: "https://js.api.here.com/v3/3.1/mapsjs-service.js",
+        charset: "utf-8"
+      }
+    ],
     link: [
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
       {
@@ -37,7 +49,8 @@ export default {
   plugins: [
     "@/plugins/axios-accessor",
     "@/plugins/store-accessor",
-    "@/plugins/global-component"
+    "@/plugins/global-component",
+    "@/plugins/vue-trend-chart"
   ],
   /*
    ** Nuxt.js dev-modules
@@ -51,7 +64,8 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     "@nuxtjs/axios",
     // Doc: https://github.com/nuxt-community/dotenv-module
-    "@nuxtjs/dotenv"
+    "@nuxtjs/dotenv",
+    "@nuxtjs/proxy"
   ],
   /*
    ** Axios module configuration

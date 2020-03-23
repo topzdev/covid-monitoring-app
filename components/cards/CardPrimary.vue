@@ -2,7 +2,8 @@
   <div class="card card--primary">
     <div class="card--primary__body">
       <div class="card--primary__header">
-        <h3
+        <nuxt-link
+          :to="resultLink"
           class="card--primary__country"
           :aria-label="stat.country_name"
           v-text="stat.country_name"
@@ -91,6 +92,10 @@ export default class CardPrimary extends Vue {
 
   get toggleText() {
     return !this.toggle ? "More Information " : "Hide Information";
+  }
+
+  get resultLink() {
+    return `/country/${this.stat.country_name.toLowerCase()}`;
   }
 }
 </script>

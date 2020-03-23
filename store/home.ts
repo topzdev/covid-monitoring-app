@@ -81,16 +81,6 @@ export default class Home extends VuexModule {
     return result.countries_stat;
   }
 
-  @Action({ commit: "SET_LATEST_STAT_BY_COUNTRY" })
-  async fetchLatestStateByCountry(country: string) {
-    const result: ILastestStatByCountryInfo = await $axios.$get(
-      `https://coronavirus-monitor.p.rapidapi.com/coronavirus/latest_stat_by_country.php?country=${country}`,
-      config
-    );
-
-    return result.latest_stat_by_country;
-  }
-
   @Action({ commit: "SET_WORLD_STAT" })
   async fetchWorldState() {
     const result: IWorldStat = await $axios.$get(

@@ -9,14 +9,15 @@
   &__scrollable {
     overflow: hidden;
     margin-top: 20px;
-    height: 83vh;
-    width: 400px;
+    margin-left: -10px;
+    height: 88vh;
+    width: 420px;
   }
 
   &__cases {
     width: 100%;
     height: 100%;
-    padding-right: 20px;
+    padding: 0 20px 0 10px;
     overflow-y: scroll;
     box-sizing: content-box;
     & > *:not(:last-child) {
@@ -25,11 +26,16 @@
   }
 
   &__sidebar {
+    position: relative;
+    z-index: 2;
   }
 
   &__body {
     display: flex;
     flex: 1 1;
     align-items: flex-end;
+    pointer-events: none;
+    position: relative;
+    z-index: 2;
   }
 }

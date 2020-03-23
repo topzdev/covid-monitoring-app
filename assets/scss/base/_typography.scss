@@ -4,6 +4,7 @@
     font-family: $font-header;
     font-size: 45px;
     color: $color-base-text;
+    text-transform: capitalize;
   }
 
   &--secondary {
